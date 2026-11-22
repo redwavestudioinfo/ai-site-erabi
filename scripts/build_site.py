@@ -1,7 +1,7 @@
 """Copy validated static site for Cloudflare Pages; optionally produce sitemap.
 
-SITE_URL is optional for preview, required for search-index optimization.
-With no SITE_URL the output is crawlable but contains no sitemap/canonical tags.
+SITE_URL defaults to the published production URL for Cloudflare deployments.
+Set SITE_URL explicitly for other deployments; an empty value omits sitemap/canonical tags.
 """
 from pathlib import Path
 import os,shutil,sys
@@ -28,7 +28,7 @@ def main():
             f'<p>お問い合わせは <a href="{html_escape(contact,quote=True)}" target="_blank" rel="noopener noreferrer">こちらの窓口</a> からご連絡ください。</p>')
         contents=contents.replace('<div class="notice">正式公開前に運営者の連絡窓口を追加してください。個人情報や事業名は許可なく記載しません。</div>','')
         about.write_text(contents,encoding='utf-8')
-    url=os.environ.get('SITE_URL','').strip().rstrip('/')
+    url=os.environ.get('SITE_URL','https://ai-site-erabi.pages.dev').strip().rstrip('/')
     if url:
         parsed=urlparse(url)
         if parsed.scheme!='https' or not parsed.netloc or parsed.path not in ('','/'):
