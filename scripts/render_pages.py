@@ -34,18 +34,72 @@ def sources(items):
 SRC=[('ロリポップ！AIホームページ公式','https://lolipop.jp/ai/homepage/'),('Wix公式のAIサイト作成ガイド','https://ja.wix.com/blog/2026/09/how-to-use-wix-ai-website-builder'),('Jimdo日本語公式','https://www.jimdo.com/jp/'),('Jimdo公式料金表','https://www.jimdo.com/jp/pricing/')]
 
 home=f'''
-<section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">2026年11月更新 / 公式情報から比較</p><h1>ホームページ作り、<br>AIと一緒に。<br>でも、契約は慎重に。</h1><p>「無料」でどこまでできる？ 独自ドメインは使える？ あとから更新できる？<br>AIホームページ作成ツールを、価格だけでなく<strong>公開後の使いやすさ</strong>まで比較します。</p><div class="actions"><a href="#finder" class="btn">30秒で候補を探す</a><a href="/compare.html" class="btn btn-alt">比較表を見る</a></div></div><aside class="hero-note"><h2>比較のルール</h2><ul><li>公式サイトに記載された機能のみ比較</li><li>実際に試していないサービスの体験談は書かない</li><li>広告契約より読者の用途を優先</li><li>未検証は「不明」と記載</li></ul></aside></div></section>
-<section class="wrap section" id="finder"><p class="kicker">QUICK FINDER</p><h2>目的から候補を探す</h2><p class="muted">広告の有無によるランキングではありません。質問への回答に合う調べ始めの候補を表示します。</p><div class="picker"><div class="picker-grid"><label for="purpose">重視すること<select id="purpose"><option value="simple">会話で簡単に作りたい</option><option value="design">デザインを細かく直したい</option><option value="quick">質問に答えて作りたい</option></select></label><label for="budget">予算<select id="budget"><option value="free">まずは完全無料で公開したい</option><option value="paid">必要なら有料でもよい</option></select></label></div><div id="picker-result" class="picker-result" aria-live="polite"><strong>候補を表示します</strong></div><p class="aside">これは診断ではなく用途別の入口です。サービスの品質順位や申込を保証するものではありません。</p></div></section>
-<section class="section section-alt"><div class="wrap"><div class="split"><div><p class="kicker">SIDE BY SIDE</p><h2>まず比べたい3サービス</h2></div><a href="/compare.html">詳細な比較表を見る →</a></div><div class="cards">
-<article class="card"><span class="pill">10日間お試し</span><h3>ロリポップ！AIホームページ</h3><p>AIと会話してサイトの作成・公開・更新を進める形式。月額660円〜は36か月契約の場合で、長期契約は一括払いとなります。</p><ul><li>試用期間：10日間</li><li>継続利用：有料</li><li>費用は契約期間で異なる</li></ul><a class="card-link" href="https://lolipop.jp/ai/homepage/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
-<article class="card"><span class="pill neutral">無料プランあり</span><h3>Wix（Harmony）</h3><p>AIで構成を作り、ドラッグ＆ドロップで編集できます。無料プランにはWixの広告が表示され、独自ドメイン利用は有料です。</p><ul><li>無料プランで試せる</li><li>手動で細かな編集が可能</li><li>独自ドメインは有料</li></ul><a class="card-link" href="https://ja.wix.com/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
-<article class="card"><span class="pill neutral">無料プランあり</span><h3>Jimdo（AIビルダー）</h3><p>質問への回答をもとにサイトの土台を作る方式。無料プランから試せます。独自ドメインは有料プランの条件です。</p><ul><li>無料プランで開始可能</li><li>質問に答えてサイトの土台を作る</li><li>独自ドメインは有料</li></ul><a class="card-link" href="https://www.jimdo.com/jp/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
-</div><aside class="notice" aria-label="広告"><p><strong>PR・広告｜ロリポップ！AIホームページ</strong></p><p>以下はA8.net経由の広告リンクです。契約条件は申込先でご確認ください。</p><p><a href="https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E" rel="nofollow">質問に答えるだけ！AIが最短10分でサイト完成【ロリポップ！AIホームページ】</a></p>
-<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E" alt=""></aside><p class="aside">※「公式サイトを確認」は通常リンクです。別枠の「PR・広告」は成果報酬型の広告リンクです。各サービスは未使用のため、体験レビューや評価点は付けていません。</p></div></section>
-<section class="wrap section"><p class="kicker">READ BEFORE YOU BUY</p><h2>契約前に気を付けたい4つ</h2><div class="list-cards"><div><h3>1. 「無料体験」と「無料プラン」は違う</h3><p>10日間だけ無料で使えるサービスと、制限付きで無料公開を続けられるサービスは別物です。</p></div><div><h3>2. 最安「月額」は総額ではない</h3><p>長期契約の月額換算が安くても、料金は契約期間分の一括払いになることがあります。</p></div><div><h3>3. 独自ドメインの更新料</h3><p>初年度無料の特典があっても、2年目以降の更新料や解約後の扱いを確認しましょう。</p></div><div><h3>4. 乗り換え時にデータを持ち出せるか</h3><p>サイトのHTML・画像・ブログ記事・ドメインを、後から別サービスへ移行できるか確認が必要です。</p></div></div></section>
-<section class="section section-alt"><div class="wrap"><p class="kicker">GUIDES</p><h2>初心者向けガイド</h2><div class="cards"><article class="card"><span class="chip">費用</span><h3>無料プラン・無料体験・有料プランの違い</h3><p>見落としやすい総支払額や独自ドメインの条件を整理。</p><a class="card-link" href="/articles/free-vs-trial.html">続きを読む →</a></article><article class="card"><span class="chip">手順</span><h3>AIでホームページを作る7ステップ</h3><p>作成する前に用意する素材から公開前のチェックまで。</p><a class="card-link" href="/guide.html">続きを読む →</a></article><article class="card"><span class="chip">比較</span><h3>サービス比較で迷ったときの判断軸</h3><p>編集方法・料金・独自ドメインを整理して候補を絞る。</p><a class="card-link" href="/compare.html">続きを読む →</a></article></div></div></section>
-<section class="wrap section"><h2>広告と編集の透明性</h2><div class="notice">一部に成果報酬型の広告リンクを掲載しています。対象リンクは「PR・広告」と明示し、通常の公式リンクと区別します。広告の有無は比較順位を左右しません。価格や機能は各サービスの公式ページで再確認してください。</div><p class="muted small">最終的な契約判断は各サービスの利用規約・申込画面に基づいて行ってください。</p></section>
+<section class="hero hero-v2"><div class="wrap hero-grid">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> AI WEBSITE GUIDE <span class="eyebrow-year">2026</span></p>
+    <h1>AIでホームページ。<br><span class="gradient-text">自分に合う作り方、<br>ここで見つけよう。</span></h1>
+    <p class="hero-lead">「無料で公開したい」「とにかく簡単がいい」「デザインもこだわりたい」。<br>あなたの目的から、AIホームページ作成サービスの違いをわかりやすく整理します。</p>
+    <div class="actions"><a href="#choose" class="btn btn-primary">30秒で候補を探す <span aria-hidden="true">→</span></a><a href="#services" class="btn btn-ghost">3つのサービスを見る</a></div>
+    <p class="hero-proof"><span aria-hidden="true">✓</span> 公式情報に基づく比較　 <span aria-hidden="true">✓</span> 無料と有料の違いも説明</p>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="browser-preview">
+      <div class="browser-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span class="browser-address">AI SITE ERABI / FINDER</span><span class="browser-menu">•••</span></div>
+      <div class="browser-inner"><div class="browser-intro">WHAT MATTERS MOST?</div><div class="browser-title">あなたはどのタイプ？</div>
+        <div class="browser-option"><span class="option-emoji">◈</span><span>できるだけ無料で</span><span class="option-check">✓</span></div>
+        <div class="browser-option muted-option"><span class="option-emoji">✳</span><span>直感的に編集したい</span><span>↗</span></div>
+        <div class="browser-option muted-option"><span class="option-emoji">✦</span><span>会話しながら作りたい</span><span>↗</span></div>
+        <div class="browser-preview-bottom"><span class="progress-lines"><b></b><b></b><b></b></span><span>あなたに合う選び方へ →</span></div>
+      </div>
+    </div>
+    <span class="float-chip float-a">無料プランを比較</span><span class="float-chip float-b">料金の落とし穴もチェック</span>
+  </div>
+</div></section>
+<div class="trust-strip"><div class="wrap trust-strip-inner"><span>迷ったら、ここから。</span><span>01 <strong>無料・有料を整理</strong></span><span>02 <strong>用途別に候補を提案</strong></span><span>03 <strong>契約前の注意点を確認</strong></span></div></div>
+<section class="section choose-section" id="choose"><div class="wrap">
+  <div class="section-heading"><p class="kicker">01 / QUICK FINDER</p><h2>まずは、あなたの希望を教えて。</h2><p>質問は2つだけ。条件に合いそうなサービスの<strong>調べ始める候補</strong>を提案します。</p></div>
+  <div class="picker picker-v2"><div class="picker-left">
+      <div class="step-label">QUESTION 01 <span>なにを重視する？</span></div>
+      <label class="select-label" for="purpose">ホームページの作り方<select id="purpose"><option value="simple">AIと会話して進めたい</option><option value="design">デザインを自分で調整したい</option><option value="quick">質問に答えて土台を作りたい</option></select></label>
+      <div class="step-label step-label-second">QUESTION 02 <span>予算のイメージは？</span></div>
+      <label class="select-label" for="budget">利用料金<select id="budget"><option value="free">ずっと無料で公開できる候補がいい</option><option value="paid">必要なら有料でもOK</option></select></label>
+      <p class="aside picker-caveat">※診断結果は公式に公開された特徴を整理した参考情報であり、実際の使用感・品質の順位ではありません。</p>
+    </div>
+    <div class="picker-right"><span class="result-chip">YOUR STARTING POINT</span><div class="picker-result" id="picker-result" aria-live="polite" aria-atomic="true"><span class="result-icon" aria-hidden="true">✦</span><strong>あなた向けの候補</strong><p>条件を選ぶと、候補と確認ポイントが表示されます。</p></div><a class="result-more" href="/compare.html">3サービスの詳しい比較を見る <span aria-hidden="true">↗</span></a></div>
+  </div>
+</div></section>
+<section class="section section-alt" id="services"><div class="wrap">
+  <div class="section-heading split"><div><p class="kicker">02 / CHOOSE YOUR STYLE</p><h2>3つのサービス、<br>違いは「作り方」と「料金」。</h2><p>一番高いものが正解とは限りません。まずは自分の優先順位から選びましょう。</p></div><a class="section-text-link" href="/compare.html">すべての条件を比較する ↗</a></div>
+  <div class="service-grid">
+    <article class="service-card service-free"><div class="service-top"><span class="service-symbol symbol-wix">W</span><span class="service-label">無料で公開したい人</span></div><h3>Wix</h3><p class="service-subtitle">AIで土台を作って、自分で細かく編集</p><div class="service-highlight"><strong>無料プランあり</strong><span>独自ドメインは有料</span></div><ul><li>画面上で細かな編集が可能</li><li>無料プランには広告表示</li><li>デザインを自分で直したい人向け</li></ul><a class="service-link" href="https://ja.wix.com/" target="_blank" rel="noopener noreferrer">公式サイトで確認 <span aria-hidden="true">↗</span></a></article>
+    <article class="service-card service-quick"><div class="service-top"><span class="service-symbol symbol-jimdo">J</span><span class="service-label">質問から手軽に始めたい人</span></div><h3>Jimdo</h3><p class="service-subtitle">質問に答えながらサイトの土台を作成</p><div class="service-highlight"><strong>無料プランあり</strong><span>独自ドメインは有料</span></div><ul><li>質問回答型の作成フロー</li><li>無料プランで試せる</li><li>公開後の機能制限は要確認</li></ul><a class="service-link" href="https://www.jimdo.com/jp/" target="_blank" rel="noopener noreferrer">公式サイトで確認 <span aria-hidden="true">↗</span></a></article>
+    <article class="service-card service-chat"><div class="service-top"><span class="service-symbol symbol-loli">L</span><span class="service-label">会話しながら作りたい人</span></div><h3>ロリポップ！<br>AIホームページ</h3><p class="service-subtitle">AIとの会話で作成・修正を進める</p><div class="service-highlight"><strong>10日間お試し</strong><span>継続利用は有料</span></div><ul><li>AIとの対話で構成を作る</li><li>長期契約は一括払い</li><li>月額660円〜は36か月契約時</li></ul><a class="service-link" href="https://lolipop.jp/ai/homepage/" target="_blank" rel="noopener noreferrer">公式サイトで確認 <span aria-hidden="true">↗</span></a></article>
+  </div>
+  <div class="ad-inline"><span class="ad-inline-badge">PR・広告</span><div><strong>ロリポップ！AIホームページを詳しく見る</strong><p>A8.netの広告リンクです。申込前に契約期間・支払総額を確認してください。</p><a href="https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E" rel="nofollow">質問に答えるだけ！AIが最短10分でサイト完成【ロリポップ！AIホームページ】</a><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E" alt=""></div></div>
+  <p class="aside service-disclaimer">※サービスの利用体験に基づくランキングではありません。各サービスの詳しい条件は公式サイトをご確認ください。広告リンクと通常の公式リンクは別に表示しています。</p>
+</div></section>
+<section class="section" id="quick-compare"><div class="wrap">
+  <div class="section-heading"><p class="kicker">03 / AT A GLANCE</p><h2>迷ったら、この4項目を比べよう。</h2><p>料金の安さだけでなく、公開後の使い方まで考えるのがポイント。</p></div>
+  <div class="compare-preview"><div class="table-scroll"><table><caption class="aside">公式情報をもとに整理／2026年11月確認</caption><thead><tr><th scope="col">比較項目</th><th scope="col">Wix</th><th scope="col">Jimdo</th><th scope="col">ロリポップ！AI</th></tr></thead><tbody>
+    <tr><th scope="row">無料公開</th><td><span class="table-positive">無料プランあり</span></td><td><span class="table-positive">無料プランあり</span></td><td>10日間の試用</td></tr>
+    <tr><th scope="row">作り方</th><td>AI＋画面編集</td><td>質問に回答</td><td>AIと会話</td></tr>
+    <tr><th scope="row">独自ドメイン</th><td>有料プラン</td><td>有料プラン</td><td>契約条件を確認</td></tr>
+    <tr><th scope="row">料金の注意点</th><td>無料版は広告表示</td><td>無料版は機能制限</td><td>長期契約は一括払い</td></tr>
+  </tbody></table></div><a href="/compare.html" class="compare-bottom-link">詳しい比較表・料金条件を見る <span aria-hidden="true">→</span></a></div>
+</div></section>
+<section class="section section-soft" id="how-to"><div class="wrap">
+  <div class="section-heading"><p class="kicker">04 / BEFORE YOU DECIDE</p><h2>「無料」の前に、<br>知っておきたいこと。</h2><p>契約前に知っておけば、あとで困りにくくなる4つのチェック。</p></div>
+  <div class="feature-tiles"><article><span>01</span><h3>無料体験と無料プランは別</h3><p>期間終了後に有料となるサービスと、制限付きで無料公開できるサービスは違います。</p></article><article><span>02</span><h3>月額表示と支払総額</h3><p>「月額○円〜」でも長期契約の一括払いになる場合があります。</p></article><article><span>03</span><h3>ドメインの更新費用</h3><p>初年度無料でも、次年度以降の維持費がかかる可能性があります。</p></article><article><span>04</span><h3>乗り換えやすさ</h3><p>HTML・画像・記事を別サービスへ移せるか、事前に確認しましょう。</p></article></div>
+</div></section>
+<section class="section" id="learn"><div class="wrap">
+  <div class="section-heading"><p class="kicker">05 / LEARN MORE</p><h2>もう少し詳しく知りたい人へ。</h2></div>
+  <div class="learn-grid"><a href="/articles/free-vs-trial.html"><span class="learn-icon">¥</span><span class="learn-caption">お金のはなし</span><strong>「無料」と「無料体験」は何が違う？</strong><span class="learn-arrow">続きを読む ↗</span></a><a href="/guide.html"><span class="learn-icon">✳</span><span class="learn-caption">初めての制作</span><strong>AIでホームページを作る7ステップ</strong><span class="learn-arrow">続きを読む ↗</span></a><a href="/compare.html"><span class="learn-icon">≡</span><span class="learn-caption">サービス比較</span><strong>Wix・Jimdo・ロリポップの違い</strong><span class="learn-arrow">続きを読む ↗</span></a></div>
+</div></section>
+<section class="section faq-section"><div class="wrap faq-layout"><div><p class="kicker">FAQ</p><h2>よくある疑問</h2><p class="muted">気になる点は、公式の契約条件もあわせて確認してください。</p></div><div class="faq"><details><summary>完全無料でホームページを公開できる？</summary><p>WixとJimdoには無料プランがあります。ただし広告表示や機能制限があります。独自ドメインを使うには有料プランが必要です。</p></details><details><summary>AIだけでホームページは完成する？</summary><p>AIで土台を作れますが、文章・画像の正確性、連絡先、法的な表示、料金条件などは公開前に確認しましょう。</p></details><details><summary>どのサービスが一番いいの？</summary><p>目的によって変わります。無料公開を続けたいか、編集自由度を重視するか、会話で作りたいかを基準に選んでください。未使用サービスに順位は付けていません。</p></details></div></div></section>
+<section class="closing-section"><div class="wrap closing-inner"><div><p class="kicker">START HERE</p><h2>最初の一歩を、<br>もっとシンプルに。</h2><p>まずは条件を整理するだけでOK。契約するのは、そのあと。</p></div><a class="btn btn-primary" href="#choose">自分に合う候補を探す →</a></div></section>
+<section class="wrap transparency-section"><h2>比較の方針と広告について</h2><p>このサイトは公式情報をもとに条件を整理する独立メディアです。サービスを実際に使用した体験レビューではありません。一部にA8.net経由の成果報酬型広告があり、「PR・広告」と明記しています。広告の有無は掲載順を決める基準ではありません。<a href="/about.html">運営方針を見る</a></p></section>
 '''
+
 (SITE/'index.html').write_text(page('AIサイト選び｜AIホームページの作成ツールを公式情報で比較','AIでホームページを作りたい初心者へ。ロリポップ！AIホームページ、Wix、Jimdoの無料利用・有料条件・編集方法を公式情報から比較。',home,active='index.html'),encoding='utf-8')
 
 compare=heading('COMPARE','AIホームページ作成ツール比較','最初から「おすすめ順位」を決めず、公式情報で確認できた条件を横並びに整理しました。')+'''
