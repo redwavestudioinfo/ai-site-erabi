@@ -100,7 +100,7 @@ home=f'''
 <section class="wrap transparency-section"><h2>比較の方針と広告について</h2><p>このサイトは公式情報をもとに条件を整理する独立メディアです。サービスを実際に使用した体験レビューではありません。一部にA8.net経由の成果報酬型広告があり、「PR・広告」と明記しています。広告の有無は掲載順を決める基準ではありません。<a href="/about.html">運営方針を見る</a></p></section>
 '''
 
-(SITE/'index.html').write_text(page('AIサイト選び｜AIホームページの作成ツールを公式情報で比較','AIでホームページを作りたい初心者へ。ロリポップ！AIホームページ、Wix、Jimdoの無料利用・有料条件・編集方法を公式情報から比較。',home,active='index.html'),encoding='utf-8')
+(SITE/'index.html').write_text(page('AIホームページ作成ツール比較｜無料で作れる？3サービスの選び方｜AIサイト選び','AIでホームページを作りたい初心者へ。Wix・Jimdo・ロリポップ！AIホームページの無料プラン、料金、編集方法を比較。2問で候補を探せます。',home,active='index.html'),encoding='utf-8')
 
 compare=heading('COMPARE','AIホームページ作成ツール比較','最初から「おすすめ順位」を決めず、公式情報で確認できた条件を横並びに整理しました。')+'''
 <section class="wrap section"><p class="kicker">比較表</p><h2>無料でどこまで使える？</h2>
