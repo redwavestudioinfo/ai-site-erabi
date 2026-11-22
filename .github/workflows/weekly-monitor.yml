@@ -4,19 +4,46 @@ on:
     # Monday 06:41 Japan time (UTC Sunday 21:41)
     - cron: '41 21 * * 0'
   workflow_dispatch:
+  # Run an initial verification when this workflow, sources, or its checker changes.
+  # Report-file commits do not match these paths (avoids loops).
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weekly-monitor.yml'
+      - 'scripts/check_sources.py'
+      - 'data/sources.json'
 permissions:
   contents: write
+  issues: write
+concurrency:
+  group: official-source-monitor
+  cancel-in-progress: false
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Audit official pages without changing editorial claims
-        run: python scripts/check_sources.py
-      - name: Record report
+        id: audit
+        run: |
+          python scripts/check_sources.py
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          data=json.loads(Path('data/source-state.json').read_text(encoding='utf-8'))
+          changed=[sid for sid,item in data.items() if item.get('state')=='changed']
+          unavailable=[sid for sid,item in data.items() if item.get('state')=='unavailable']
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write(f'has_changes={str(bool(changed)).lower()}\n')
+              f.write(f'changed_count={len(changed)}\n')
+              f.write(f'unavailable_count={len(unavailable)}\n')
+          print('Sources changed:', len(changed), '/ unavailable:', len(unavailable))
+          PY
+      - name: Record report and fingerprints
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -25,3 +52,16 @@ jobs:
             git commit -m 'chore: record official-source check'
             git push
           fi
+      - name: Open an issue only for changed official-source text
+        if: steps.audit.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --title "要確認：公式情報の変更（$(date -u +%Y-%m-%d)）" \
+            --body-file data/last-check.md
+      - name: Summary
+        run: |
+          echo "### Official source monitor" >> "$GITHUB_STEP_SUMMARY"
+          echo "Changes: ${{ steps.audit.outputs.changed_count }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Unavailable sources: ${{ steps.audit.outputs.unavailable_count }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Changes are **never** automatically published as claims." >> "$GITHUB_STEP_SUMMARY"
