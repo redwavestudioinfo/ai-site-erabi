@@ -57,6 +57,12 @@ compare=heading('COMPARE','AIホームページ作成ツール比較','最初か
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E" alt=""></aside>
 <h2>「月額660円〜」でいくら払う？</h2><p>ロリポップ！AIホームページの月額660円は、公式の36か月契約の月額換算です。36か月分の料金の合計は <strong>660円 × 36か月 = 23,760円（税込）</strong>。表示上の月額だけで判断せず、契約時にいくら必要か確認しましょう。</p><p>12か月以上のプランには独自ドメイン初年度無料の対象条件がありますが、更新後の費用も考慮してください。</p>
 <div class="notice">ここではサービスの料金比較を目的としています。どのサービスも、必要な機能・予算・移行条件によって適切さが変わります。</div>
+<section class="resource-roadmap" aria-label="契約前に確認すること">
+<h2>詳しく調べたい人へ</h2><p>比較表だけでは決められない場合は、契約後の費用と更新の操作から確認してみてください。</p>
+<div class="resource-links"><a href="/articles/domain-renewal.html"><span>料金・更新</span><strong>独自ドメインの2年目の費用を確認する</strong><span>読む ↗</span></a>
+<a href="/articles/edit-after-publish.html"><span>操作・実例</span><strong>AIで作ったホームページを公開後に直す方法</strong><span>読む ↗</span></a></div>
+<p>各社の操作画面や完成イメージは <a href="/#examples">公式デモ・画面ガイド</a> から確認できます。</p>
+</section>
 <h2>比較するときの順番</h2><ol class="feature-steps"><li><strong>無料で公開する必要があるか</strong><p>必要なら無料プランが存在するサービスから確認。</p></li><li><strong>AIで作った後の編集方法を確認する</strong><p>会話、ドラッグ＆ドロップ、フォーム入力のどれが向いているか。</p></li><li><strong>独自ドメインと更新費用を見る</strong><p>サブドメインで十分か、本格運用に向けて独自ドメインが必要か。</p></li><li><strong>将来の乗り換えを想定する</strong><p>移行できる範囲はサービスによって異なり、実装状況も変化します。</p></li></ol>
 '''+sources(SRC)+'</section>'
 (SITE/'compare.html').write_text(page('AIホームページ比較表｜ロリポップ・Wix・Jimdo｜AIサイト選び','AIサイト作成サービスの無料枠、独自ドメイン、編集方法、支払い条件を比較します。',compare,active='compare.html'),encoding='utf-8')
