@@ -4,6 +4,17 @@
 ロリポップ！AIホームページ、Wix、Jimdoの条件を紹介します。
 **実際の広告成果、アクセス、収益はまだありません。**
 
+## 運用状況（2026-11-22 確認）
+
+- 公開URL: https://ai-site-erabi.pages.dev/ （Cloudflare Pages）
+- サイトのトップページは Google Search Console でインデックス登録済み（ユーザー画面で確認）。サイトマップのGoogleによる読込成功は未確認。
+- A8.net「ロリポップ！AIホームページ」素材001を公式発行コードでトップ・比較ページに掲載。PR表記あり。実売上は未確認。
+- GitHub Actions: Test static site の最新実行成功。
+- Weekly official-source monitor: 初回実行成功。公式5ページをすべてHTTP 200で取得し、比較用の初期フィンガープリントを保存。以後の変化はGitHub Issuesでレビュー対象化。
+- Optional weekly AI editorial draft: ワークフローの初回テストは成功。無料Gemini APIキー未設定のため、生成は安全にスキップ（記事は自動公開されない）。
+- サイトの運営者問い合わせ窓口は現在準備中。
+- GitHub上の監視データをチェックし、異常時のみChatGPT通知する週次タスクも別途設定済み（サイトの自動監視とは独立）。
+
 ## この配布版でできること
 - 7つの日本語HTMLページ（トップ／比較／ガイド／無料と有料の違い／運営／個人情報／404）
 - 30秒の用途別ツール候補表示（JavaScript、追跡なし）
@@ -11,7 +22,7 @@
 - 必要ならGemini APIの無料枠で記事の「未検証の下書き」を週1回だけ作成（GitHub Actions artifact保存）
 - Cloudflare Pagesの無料プランで公開可能な静的サイト一式
 - 内部リンクや未承認の広告URLをチェックするテスト
-- `SITE_URL`が設定されればサイトマップ、canonical、robots.txtを生成
+- `SITE_URL`は本番URLを既定値として使用し、サイトマップ・canonical・robots.txtを生成（他の公開先では環境変数で上書き）
 
 ## 0円のための重要ルール
 - 有料API・有料プラン・独自ドメインは**契約しない**。Cloudflareの`*.pages.dev`を使う。
@@ -24,9 +35,9 @@
 ## GitHub／Cloudflare Pagesで公開する手順
 
 ### 1. GitHubで新しい空の「Public」リポジトリを作る
-1. https://github.com/new にアクセス。
+1. （実施済み）https://github.com/new にアクセス。
 2. Repository name に `ai-site-erabi`、Visibility を `Public` にする。
-3. 新しいリポジトリを作成（初期README、.gitignoreなどは作成しなくてよい）。
+3. （実施済み）新しいリポジトリを作成。
 4. **このフォルダの中身**をGitHubにアップロード。`index.html`ではなく、ルートの`site/`, `scripts/`, `data/`, `.github/`などを含める。
 5. Actionsを有効化。リポジトリの`Settings > Actions > General`で必要な権限を確認。
 
@@ -39,8 +50,8 @@
 4. Build command は `python scripts/build_site.py`。
 5. Build output directory は `dist`。
 6. 初回デプロイで `https://＜プロジェクト名＞.pages.dev` の公開URLが発行される。
-7. Pagesの設定で環境変数 `SITE_URL` にその**公開URL全体**を設定し、再デプロイする（サイトマップ生成）。
-8. Pagesの環境変数 `CONTACT_URL` に、GitHubリポジトリのIssuesなど自分が管理する問い合わせ窓口の`https://` URLを設定し、再デプロイする。
+7. `SITE_URL` の既定値は `https://ai-site-erabi.pages.dev`。別ドメインへ移す場合だけ環境変数で変更する。
+8. 問い合わせ窓口は未設定。正式な連絡先（個人情報を不用意に公開しない窓口）を決めたら `CONTACT_URL` で設定する。
 9. 実際のサイトを開き、スマートフォン表示とすべてのリンクを確認。
 
 Cloudflare Pagesは無料枠・ビルド上限の範囲で運用。枠を超えそうなら無料運用を停止して見直す。
@@ -63,13 +74,13 @@ Cloudflare Pagesは無料枠・ビルド上限の範囲で運用。枠を超え�
 ### 5. ASP広告を設置する場合
 1. 無料のA8.net（https://www.a8.net/）に本人名義で登録。
 2. ロリポップ！AIホームページの案件を探して提携を申請。
-3. 審査が承認されてから、A8.netが正式に発行するリンクをサイト内の通常リンクと差し替える。
-4. 該当ページの冒頭、広告リンクの近くに**広告・PR**を明示し、`rel="sponsored noopener noreferrer"`を設定する。
+3. （実施済み）A8.netが正式に発行する素材001を、通常の公式リンクと**区別して**掲載した。
+4. （実施済み）広告ブロックに **PR・広告** を明示し、A8.net発行の `rel="nofollow"` と計測用1×1画像を原文のまま保持する。
 5. ASPの広告主条件、自己申込の禁止事項、商標への広告出稿禁止を確認する。
 6. ASPの管理画面で成果を確認。APIなどで確実に取得できない売上をシステムが推計して実績扱いしない。
 
-### 6. 正式公開前の必須チェック
-- 環境変数 `CONTACT_URL` に運営者の連絡窓口を設定すること。
+### 6. 継続運用で確認する項目
+- 問い合わせ窓口ができたら `CONTACT_URL` に設定すること。
 - 運営方針・プライバシー・広告表示を、自分の公開・計測実態に合わせて更新すること。
 - 料金・特典を各サービスの公式ページで再確認すること。
 - 正式に提携した案件以外の広告URLを載せないこと。
