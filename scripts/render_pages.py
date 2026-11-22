@@ -76,6 +76,18 @@ free=heading('COST GUIDE','無料プランと無料体験の違い','サービ�
 '''+sources(SRC)+'</section>'
 (SITE/'articles/free-vs-trial.html').write_text(page('無料プランと無料体験の違い｜AIホームページ作成｜AIサイト選び','AIホームページ作成サービスの無料プランと無料体験、独自ドメインの追加費用を解説。',free),encoding='utf-8')
 
+# Source-reviewed articles are maintained as separate editable HTML fragments.
+domain_guide=(ROOT/'data'/'articles'/'domain-renewal.html').read_text(encoding='utf-8')
+(SITE/'articles/domain-renewal.html').write_text(
+    page('独自ドメインの更新費用は？無料特典と2年目の注意点｜AIサイト選び',
+         '独自ドメイン初年度無料の注意点と2年目の更新料、Wix・Jimdo・ロリポップ！AIホームページの条件を公式情報で整理。',
+         domain_guide,active='guide.html'),encoding='utf-8')
+editing_guide=(ROOT/'data'/'articles'/'edit-after-publish.html').read_text(encoding='utf-8')
+(SITE/'articles/edit-after-publish.html').write_text(
+    page('AIホームページは公開後に修正できる？Wix・Jimdo・ロリポップを比較｜AIサイト選び',
+         'AIで作ったホームページを公開後にどう編集する？Wix、Jimdo、ロリポップ！AIホームページの公式操作ガイドと実際のデモを紹介。',
+         editing_guide,active='guide.html'),encoding='utf-8')
+
 about=heading('ABOUT','このサイトの運営方針','「AIで簡単に作れる」の先にある、運用・費用・移行条件まで整理することを目指します。')+'''
 <section class="wrap section article"><h2>サイトについて</h2><p>AIサイト選びは、AIでホームページを作りたい初心者向けに、サービス選択に必要な条件を公式情報から整理する独立した情報サイトです。運営名義は「AIサイト選び編集部」（仮称）です。現在は試験公開中です。</p>
 <h2>編集方針</h2><ul><li>公式サイトや公式ヘルプへの参照リンクを示します。</li><li>実際に使用していないサービスの体験レビューは掲載しません。</li><li>料金・機能の更新チェックを自動化し、確認できない項目は断定しません。</li><li>AIを使って文章案を作成する場合も、出典確認を通過した情報だけを公開します。</li><li>広告の有無をサービスの優劣の根拠にしません。</li></ul>
