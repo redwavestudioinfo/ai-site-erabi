@@ -48,5 +48,29 @@
     ],
     "status": "published",
     "page": "articles/edit-after-publish.html"
+  },
+  {
+    "id": "launch_checklist",
+    "title": "AIホームページを公開する前の確認チェックリスト",
+    "query_intent": "公開準備・チェックリスト",
+    "source_ids": [
+      "wix_harmony",
+      "jimdo_howto",
+      "lolipop_product"
+    ],
+    "status": "draft_requested",
+    "page": null
+  },
+  {
+    "id": "website_first_month",
+    "title": "小さな店舗ホームページ公開後の最初の30日で確認すること",
+    "query_intent": "サイト運用・継続更新",
+    "source_ids": [
+      "lolipop_product",
+      "wix_harmony",
+      "jimdo_home"
+    ],
+    "status": "draft_requested",
+    "page": null
   }
 ]
