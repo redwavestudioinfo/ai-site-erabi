@@ -70,6 +70,44 @@ class ProjectTest(unittest.TestCase):
         self.assertIn('https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E',html_source)
         self.assertIn('PR・広告',html_source)
 
+    def test_content_guides_and_official_examples(self):
+        home=(ROOT/'site'/'index.html').read_text(encoding='utf-8')
+        compare=(ROOT/'site'/'compare.html').read_text(encoding='utf-8')
+        body=(ROOT/'data'/'home-v3.html').read_text(encoding='utf-8')
+        for path in ('domain-renewal.html','edit-after-publish.html'):
+            p=ROOT/'site'/'articles'/path
+            self.assertTrue(p.exists(),f'Unpublished guide: {path}')
+            html=p.read_text(encoding='utf-8')
+            self.assertIn('参照した公式情報',html)
+            self.assertIn('/compare.html',html)
+            self.assertIn('2026年11月22日',html)
+            self.assertIn('/articles/'+path,home)
+            self.assertIn('/articles/'+path,compare)
+            self.assertIn('/articles/'+path,body)
+        self.assertIn('id="examples"',home)
+        self.assertIn('https://wild-tooth-7849.lolipop.website/',home)
+        self.assertIn('https://ja.wix.com/explore/websites',home)
+        self.assertIn('https://portal-jp.jimdo.com/how-to-use-aibuilder01',home)
+        approved='https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E'
+        pixel='https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E'
+        self.assertEqual(home.count(approved),1)
+        self.assertEqual(compare.count(approved),1)
+        for path in ('domain-renewal.html','edit-after-publish.html'):
+            html=(ROOT/'site'/'articles'/path).read_text(encoding='utf-8')
+            self.assertNotIn(approved,html)
+            self.assertNotIn(pixel,html)
+
+    def test_guide_source_parity(self):
+        renderer=(ROOT/'scripts'/'render_pages.py').read_text(encoding='utf-8')
+        topics=json.loads((ROOT/'data'/'editorial-topics.json').read_text(encoding='utf-8'))
+        for id,path in [('domain_renewal','domain-renewal.html'),
+                        ('ai_editing_workflow','edit-after-publish.html')]:
+            topic=next(t for t in topics if t['id']==id)
+            self.assertEqual(topic['status'],'published')
+            self.assertEqual(topic['page'],'articles/'+path)
+            self.assertIn(path,renderer)
+            self.assertTrue((ROOT/'data'/'articles'/path).exists())
+
     def test_all_sources_are_https_and_unique(self):
         data=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
         ids=[s['id'] for s in data]
