@@ -18,6 +18,7 @@ def page(title, description, body, *, active='', article=False):
 <title>{escape(title)}</title>
 <meta name="robots" content="index,follow"><meta name="theme-color" content="#123044">
 <link rel="stylesheet" href="/assets/styles.css">
+<meta name="google-site-verification" content="gdwm3uodac9SUT8E0ySPk1PbU5tpjHOP52BWKDZ4WbQ" />
 </head><body><a class="skip" href="#main">本文へ移動</a>
 <header class="masthead"><div class="wrap header-inner"><a class="logo" href="/">AIサイト<span>選び</span></a><nav class="nav" aria-label="メインナビゲーション">{links}</nav></div></header>
 <main id="main">{body}</main>
