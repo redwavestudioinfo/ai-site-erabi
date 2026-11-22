@@ -1,0 +1,6 @@
+[
+  {"id":"homepage_free","title":"ホームページはAIで無料作成できる？ 有料になる条件","query_intent":"費用確認","source_ids":["lolipop_product","wix_ai","jimdo_home"],"status":"published","page":"articles/free-vs-trial.html"},
+  {"id":"ai_homepage_compare","title":"AIホームページ作成ツールの選び方と比較","query_intent":"商品比較","source_ids":["lolipop_product","wix_ai","jimdo_home","jimdo_prices"],"status":"published","page":"compare.html"},
+  {"id":"domain_renewal","title":"無料ドメインと独自ドメインの更新費用の確認方法","query_intent":"契約前の疑問","source_ids":["lolipop_product","wix_ai","jimdo_home"],"status":"draft_requested","page":null},
+  {"id":"ai_editing_workflow","title":"AIが作ったホームページを公開後に直す方法","query_intent":"利用中の困りごと","source_ids":["lolipop_product","wix_ai","jimdo_home"],"status":"draft_requested","page":null}
+]

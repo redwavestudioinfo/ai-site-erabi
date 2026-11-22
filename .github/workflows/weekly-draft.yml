@@ -1,0 +1,28 @@
+name: Optional weekly AI editorial draft
+on:
+  schedule:
+    # Wednesday 07:31 Japan time (UTC Tuesday 22:31)
+    - cron: '31 22 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Create one unverified draft only (skip without free API key)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python scripts/ai_draft.py
+      - name: Store draft without publishing
+        uses: actions/upload-artifact@v4
+        with:
+          name: draft-awaiting-fact-check
+          path: drafts/*.md
+          if-no-files-found: ignore
+          retention-days: 14
