@@ -25,6 +25,16 @@ class ProjectTest(unittest.TestCase):
         for page in (ROOT/'site').rglob('*.html'):
             content=page.read_text(encoding='utf-8')
             self.assertNotIn('pub.a8.net/',content,'Do not invent affiliate tracking links')
+
+    def test_approved_affiliate_link_disclosed(self):
+        approved_link='https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E'
+        approved_pixel='https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E'
+        for path in ('index.html','compare.html'):
+            page=(ROOT/'site'/path).read_text(encoding='utf-8')
+            self.assertEqual(page.count(approved_link),1)
+            self.assertEqual(page.count(approved_pixel),1)
+            self.assertIn('PR・広告',page)
+            self.assertIn('rel="nofollow"',page)
     def test_all_sources_are_https_and_unique(self):
         data=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
         ids=[s['id'] for s in data]
