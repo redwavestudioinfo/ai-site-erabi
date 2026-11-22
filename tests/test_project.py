@@ -1,5 +1,5 @@
 from pathlib import Path
-import importlib.util,json,re,sys,unittest
+import importlib.util,json,re,sys,subprocess,unittest
 from html.parser import HTMLParser
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
@@ -107,6 +107,27 @@ class ProjectTest(unittest.TestCase):
             self.assertEqual(topic['page'],'articles/'+path)
             self.assertIn(path,renderer)
             self.assertTrue((ROOT/'data'/'articles'/path).exists())
+
+    def test_cloudflare_clean_urls_without_redirect_loops(self):
+        self.assertFalse((ROOT/'site'/'_redirects').exists(),
+                         'Cloudflare Pages clean URLs already redirect *.html to extensionless paths')
+        subprocess.run([sys.executable,str(ROOT/'scripts'/'build_site.py')],
+                       check=True,capture_output=True,text=True)
+        dist=ROOT/'dist'
+        for path in ('compare.html','guide.html','articles/domain-renewal.html',
+                     'articles/edit-after-publish.html'):
+            html=(dist/path).read_text(encoding='utf-8')
+            clean='/'+path[:-5]
+            self.assertIn('rel="canonical" href="https://ai-site-erabi.pages.dev'+clean+'"',html)
+        html=(dist/'index.html').read_text(encoding='utf-8')
+        self.assertIn('href="/compare"',html)
+        self.assertIn('href="/guide"',html)
+        self.assertIn('href="/articles/domain-renewal"',html)
+        self.assertNotIn('href="/compare.html"',html)
+        sitemap=(dist/'sitemap.xml').read_text(encoding='utf-8')
+        self.assertIn('https://ai-site-erabi.pages.dev/compare</loc>',sitemap)
+        self.assertIn('https://ai-site-erabi.pages.dev/articles/domain-renewal</loc>',sitemap)
+        self.assertNotIn('.html</loc>',sitemap)
 
     def test_all_sources_are_https_and_unique(self):
         data=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
