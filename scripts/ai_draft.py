@@ -19,7 +19,10 @@ def main():
     pending=[t for t in topics if t.get('status')=='draft_requested']
     if not pending:
         print('No editorial requests.');return 0
-    topic=pending[0] # hard limit: 1 draft per run
+    # Rotate editorial topics every ISO week instead of repeating the first topic forever.
+    # Still limit each scheduled run to a single draft; all drafts need review.
+    week=datetime.now(timezone.utc).isocalendar().week
+    topic=pending[(week-1)%len(pending)]
     refs=[sources[sid] for sid in topic['source_ids']]
     instructions='''You are writing a Japanese editorial DRAFT for a small factual comparison site.
 STRICT RULES:
