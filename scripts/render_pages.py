@@ -22,7 +22,7 @@ def page(title, description, body, *, active='', article=False):
 </head><body><a class="skip" href="#main">本文へ移動</a>
 <header class="masthead"><div class="wrap header-inner"><a class="logo" href="/">AIサイト<span>選び</span></a><nav class="nav" aria-label="メインナビゲーション">{links}</nav></div></header>
 <main id="main">{body}</main>
-<footer class="footer"><div class="wrap"><div class="footer-links"><a href="/compare.html">サービス比較</a><a href="/guide.html">作り方ガイド</a><a href="/about.html">運営方針</a><a href="/privacy.html">プライバシーポリシー</a></div><small>© 2026 AIサイト選び｜公式情報から条件を整理する独立メディア。広告提携は現在準備中。</small></div></footer>
+<footer class="footer"><div class="wrap"><div class="footer-links"><a href="/compare.html">サービス比較</a><a href="/guide.html">作り方ガイド</a><a href="/about.html">運営方針</a><a href="/privacy.html">プライバシーポリシー</a></div><small>© 2026 AIサイト選び｜公式情報から条件を整理する独立メディア。広告リンクは「PR・広告」と明示しています。</small></div></footer>
 <script src="/assets/app.js" defer></script></body></html>'''
 
 def heading(kicker,title,desc):
@@ -40,10 +40,11 @@ home=f'''
 <article class="card"><span class="pill">10日間お試し</span><h3>ロリポップ！AIホームページ</h3><p>AIと会話してサイトの作成・公開・更新を進める形式。月額660円〜は36か月契約の場合で、長期契約は一括払いとなります。</p><ul><li>試用期間：10日間</li><li>継続利用：有料</li><li>費用は契約期間で異なる</li></ul><a class="card-link" href="https://lolipop.jp/ai/homepage/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
 <article class="card"><span class="pill neutral">無料プランあり</span><h3>Wix（Harmony）</h3><p>AIで構成を作り、ドラッグ＆ドロップで編集できます。無料プランにはWixの広告が表示され、独自ドメイン利用は有料です。</p><ul><li>無料プランで試せる</li><li>手動で細かな編集が可能</li><li>独自ドメインは有料</li></ul><a class="card-link" href="https://ja.wix.com/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
 <article class="card"><span class="pill neutral">無料プランあり</span><h3>Jimdo（AIビルダー）</h3><p>質問への回答をもとにサイトの土台を作る方式。無料プランから試せます。独自ドメインは有料プランの条件です。</p><ul><li>無料プランで開始可能</li><li>質問に答えてサイトの土台を作る</li><li>独自ドメインは有料</li></ul><a class="card-link" href="https://www.jimdo.com/jp/" target="_blank" rel="noopener noreferrer">公式サイトを確認 ↗</a></article>
-</div><p class="aside">※現段階のリンクはすべて通常の公式リンク（広告リンクではありません）。各サービスは未使用につき、体験レビューや評価点は付けていません。</p></div></section>
+</div><aside class="notice" aria-label="広告"><p><strong>PR・広告｜ロリポップ！AIホームページ</strong></p><p>以下はA8.net経由の広告リンクです。契約条件は申込先でご確認ください。</p><p><a href="https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E" rel="nofollow">質問に答えるだけ！AIが最短10分でサイト完成【ロリポップ！AIホームページ】</a></p>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E" alt=""></aside><p class="aside">※「公式サイトを確認」は通常リンクです。別枠の「PR・広告」は成果報酬型の広告リンクです。各サービスは未使用のため、体験レビューや評価点は付けていません。</p></div></section>
 <section class="wrap section"><p class="kicker">READ BEFORE YOU BUY</p><h2>契約前に気を付けたい4つ</h2><div class="list-cards"><div><h3>1. 「無料体験」と「無料プラン」は違う</h3><p>10日間だけ無料で使えるサービスと、制限付きで無料公開を続けられるサービスは別物です。</p></div><div><h3>2. 最安「月額」は総額ではない</h3><p>長期契約の月額換算が安くても、料金は契約期間分の一括払いになることがあります。</p></div><div><h3>3. 独自ドメインの更新料</h3><p>初年度無料の特典があっても、2年目以降の更新料や解約後の扱いを確認しましょう。</p></div><div><h3>4. 乗り換え時にデータを持ち出せるか</h3><p>サイトのHTML・画像・ブログ記事・ドメインを、後から別サービスへ移行できるか確認が必要です。</p></div></div></section>
 <section class="section section-alt"><div class="wrap"><p class="kicker">GUIDES</p><h2>初心者向けガイド</h2><div class="cards"><article class="card"><span class="chip">費用</span><h3>無料プラン・無料体験・有料プランの違い</h3><p>見落としやすい総支払額や独自ドメインの条件を整理。</p><a class="card-link" href="/articles/free-vs-trial.html">続きを読む →</a></article><article class="card"><span class="chip">手順</span><h3>AIでホームページを作る7ステップ</h3><p>作成する前に用意する素材から公開前のチェックまで。</p><a class="card-link" href="/guide.html">続きを読む →</a></article><article class="card"><span class="chip">比較</span><h3>サービス比較で迷ったときの判断軸</h3><p>編集方法・料金・独自ドメインを整理して候補を絞る。</p><a class="card-link" href="/compare.html">続きを読む →</a></article></div></div></section>
-<section class="wrap section"><h2>広告と編集の透明性</h2><div class="notice">現在、成果報酬型の広告リンクは掲載していません。今後提携が承認された場合、該当箇所に「広告・PR」を明示します。価格や機能は公式ページへのリンク先で再確認してください。</div><p class="muted small">最終的な契約判断は各サービスの利用規約・申込画面に基づいて行ってください。</p></section>
+<section class="wrap section"><h2>広告と編集の透明性</h2><div class="notice">一部に成果報酬型の広告リンクを掲載しています。対象リンクは「PR・広告」と明示し、通常の公式リンクと区別します。広告の有無は比較順位を左右しません。価格や機能は各サービスの公式ページで再確認してください。</div><p class="muted small">最終的な契約判断は各サービスの利用規約・申込画面に基づいて行ってください。</p></section>
 '''
 (SITE/'index.html').write_text(page('AIサイト選び｜AIホームページの作成ツールを公式情報で比較','AIでホームページを作りたい初心者へ。ロリポップ！AIホームページ、Wix、Jimdoの無料利用・有料条件・編集方法を公式情報から比較。',home,active='index.html'),encoding='utf-8')
 
@@ -55,7 +56,8 @@ compare=heading('COMPARE','AIホームページ作成ツール比較','最初か
 <tr><th scope="row">費用の注意点</th><td>月額660円〜は36か月契約の場合。長期契約は一括払い</td><td>無料プランには広告表示。独自ドメインには有料契約が必要</td><td>無料プランの制限、独自ドメイン利用条件を要確認</td></tr>
 <tr><th scope="row">おすすめの検討場面</th><td>会話中心でサイトを作りたいとき</td><td>デザインを自分で細かく調整したいとき</td><td>質問に答える方式で進めたいとき</td></tr>
 <tr><th scope="row">公式リンク</th><td><a href="https://lolipop.jp/ai/homepage/" target="_blank" rel="noopener noreferrer">ロリポップ！</a></td><td><a href="https://ja.wix.com/" target="_blank" rel="noopener noreferrer">Wix</a></td><td><a href="https://www.jimdo.com/jp/" target="_blank" rel="noopener noreferrer">Jimdo</a></td></tr>
-</tbody></table></div><p class="aside">比較表の「おすすめの検討場面」は編集上の目安であり、使用感を試験した評価ではありません。</p>
+</tbody></table></div><p class="aside">比較表の「おすすめの検討場面」は編集上の目安であり、使用感を試験した評価ではありません。</p><aside class="notice" aria-label="広告"><p><strong>PR・広告｜ロリポップ！AIホームページ</strong></p><p>以下はA8.net経由の広告リンクです。契約条件は申込先でご確認ください。</p><p><a href="https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E" rel="nofollow">質問に答えるだけ！AIが最短10分でサイト完成【ロリポップ！AIホームページ】</a></p>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BGR8X+DJM182+348+4SNX5E" alt=""></aside>
 <h2>「月額660円〜」でいくら払う？</h2><p>ロリポップ！AIホームページの月額660円は、公式の36か月契約の月額換算です。36か月分の料金の合計は <strong>660円 × 36か月 = 23,760円（税込）</strong>。表示上の月額だけで判断せず、契約時にいくら必要か確認しましょう。</p><p>12か月以上のプランには独自ドメイン初年度無料の対象条件がありますが、更新後の費用も考慮してください。</p>
 <div class="notice">ここではサービスの料金比較を目的としています。どのサービスも、必要な機能・予算・移行条件によって適切さが変わります。</div>
 <h2>比較するときの順番</h2><ol class="feature-steps"><li><strong>無料で公開する必要があるか</strong><p>必要なら無料プランが存在するサービスから確認。</p></li><li><strong>AIで作った後の編集方法を確認する</strong><p>会話、ドラッグ＆ドロップ、フォーム入力のどれが向いているか。</p></li><li><strong>独自ドメインと更新費用を見る</strong><p>サブドメインで十分か、本格運用に向けて独自ドメインが必要か。</p></li><li><strong>将来の乗り換えを想定する</strong><p>移行できる範囲はサービスによって異なり、実装状況も変化します。</p></li></ol>
@@ -80,14 +82,14 @@ free=heading('COST GUIDE','無料プランと無料体験の違い','サービ�
 about=heading('ABOUT','このサイトの運営方針','「AIで簡単に作れる」の先にある、運用・費用・移行条件まで整理することを目指します。')+'''
 <section class="wrap section article"><h2>サイトについて</h2><p>AIサイト選びは、AIでホームページを作りたい初心者向けに、サービス選択に必要な条件を公式情報から整理する独立した情報サイトです。運営名義は「AIサイト選び編集部」（仮称）です。現在は試験公開中です。</p>
 <h2>編集方針</h2><ul><li>公式サイトや公式ヘルプへの参照リンクを示します。</li><li>実際に使用していないサービスの体験レビューは掲載しません。</li><li>料金・機能の更新チェックを自動化し、確認できない項目は断定しません。</li><li>AIを使って文章案を作成する場合も、出典確認を通過した情報だけを公開します。</li><li>広告の有無をサービスの優劣の根拠にしません。</li></ul>
-<h2>広告と利益相反</h2><p>現時点でアフィリエイトリンクは設置していません。広告リンクを設置する場合は該当ページに「広告・PR」の表記を追加します。リンク経由で契約が成立した際に成果報酬が発生することがあります。広告提携は審査制であり、承認されるまでは広告リンクを掲載しません。</p>
+<h2>広告と利益相反</h2><p>提携が承認された広告リンクは該当ページで「PR・広告」と表示しています。対象リンク経由の契約が成果条件を満たした場合、運営者に成果報酬が発生することがあります。広告の有無は比較内容の評価基準に含めません。</p>
 <h2>運営への連絡</h2><p>現在は試験公開中で、問い合わせ窓口を準備しています。個人情報を含む内容を公開コメントなどに投稿しないでください。</p><div class="notice">問い合わせ窓口の設置後、このページで案内します。</div>
 </section>'''
 (SITE/'about.html').write_text(page('運営方針・広告について｜AIサイト選び','サイトの運営・広告方針。公開情報の参照、AIによる下書き、アフィリエイト掲載の基準を説明。',about,active='about.html'),encoding='utf-8')
 
 privacy=heading('PRIVACY','プライバシーポリシー','本サイトにおけるデータの取得と外部リンクの扱いについて。')+'''
-<section class="wrap section article"><h2>閲覧時の情報</h2><p>初期版のサイトでは、独自のアクセス解析タグ、広告計測タグ、Cookieを設定していません。ただし配信事業者（ホスティングサービス）がセキュリティ・運用上必要なアクセスログを取得する場合があります。公開後に外部のアクセス解析や広告タグを導入した場合、本記載を更新します。</p>
-<h2>外部サイトへのリンク</h2><p>サービスの公式サイトに移動した場合、移動先の事業者が定めるプライバシーポリシーが適用されます。現在、アフィリエイトリンクは設置していません。</p>
+<section class="wrap section article"><h2>閲覧時の情報</h2><p>現時点では独自のアクセス解析タグを設置していません。一部ページにはA8.netの成果報酬型広告リンクと計測用の1×1画像タグがあります。広告配信事業者やリンク先がCookie等の技術を利用する場合があります。また、配信事業者（ホスティングサービス）はセキュリティ・運用上必要なアクセスログを取得する場合があります。</p>
+<h2>外部サイトへのリンク</h2><p>サービスの公式サイトまたは広告リンクに移動した場合、移動先および広告配信事業者が定めるプライバシーポリシーも適用されます。広告リンクは「PR・広告」と明示します。</p>
 <h2>お問い合わせ</h2><p>現在、問い合わせ窓口を準備しています。このサイトには個人情報を入力するフォームはありません。</p>
 <h2>改定について</h2><p>サイトの機能、解析・広告タグの利用状況が変わった場合は内容を見直します。最終更新：2026年11月22日。</p></section>'''
 (SITE/'privacy.html').write_text(page('プライバシーポリシー｜AIサイト選び','AIサイト選びのプライバシーポリシー。データ取得と外部リンクの扱いを記載。',privacy),encoding='utf-8')
