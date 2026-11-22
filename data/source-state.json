@@ -1,0 +1,37 @@
+{
+  "lolipop_product": {
+    "url": "https://lolipop.jp/ai/homepage/",
+    "checked_at": "2026-11-22T01:27:18+00:00",
+    "http_status": 200,
+    "state": "baseline",
+    "sha256": "a78a71cd802822a051671ff1a52e0ba925ebf44d53fa03bd3ff391000d03b607"
+  },
+  "lolipop_affiliate": {
+    "url": "https://lolipop.jp/ai/homepage/affiliate/",
+    "checked_at": "2026-11-22T01:27:18+00:00",
+    "http_status": 200,
+    "state": "baseline",
+    "sha256": "ba80da10fe1f4a5f2183b05d45d817548d43db471ebc2e8f6b4bfa45ffb46895"
+  },
+  "wix_ai": {
+    "url": "https://ja.wix.com/blog/2026/09/how-to-use-wix-ai-website-builder",
+    "checked_at": "2026-11-22T01:27:18+00:00",
+    "http_status": 200,
+    "state": "baseline",
+    "sha256": "1644cba4543dab7e32e0515f1b0869b1335a8b9c5bda5389d3a22727581f2c28"
+  },
+  "jimdo_home": {
+    "url": "https://www.jimdo.com/jp/",
+    "checked_at": "2026-11-22T01:27:18+00:00",
+    "http_status": 200,
+    "state": "baseline",
+    "sha256": "a43c3b74073fea4099ea5562d7b09ef0aa4d34d781a1763de7eb8a122dc78c67"
+  },
+  "jimdo_prices": {
+    "url": "https://www.jimdo.com/jp/pricing/",
+    "checked_at": "2026-11-22T01:27:18+00:00",
+    "http_status": 200,
+    "state": "baseline",
+    "sha256": "e7897240c068b2f094ca8caa31eda51600afdadab75c3d56d9aeeab5068b4f1a"
+  }
+}
