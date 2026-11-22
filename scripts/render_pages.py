@@ -16,7 +16,7 @@ def page(title, description, body, *, active='', article=False):
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{escape(description,quote=True)}">
 <title>{escape(title)}</title>
-<meta name="robots" content="index,follow"><meta name="theme-color" content="#123044">
+<meta name="robots" content="index,follow"><meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="/assets/styles.css">
 <meta name="google-site-verification" content="gdwm3uodac9SUT8E0ySPk1PbU5tpjHOP52BWKDZ4WbQ" />
 </head><body><a class="skip" href="#main">本文へ移動</a>
