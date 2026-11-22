@@ -103,7 +103,14 @@ home=f'''
 (SITE/'index.html').write_text(page('AIサイト選び｜AIホームページの作成ツールを公式情報で比較','AIでホームページを作りたい初心者へ。ロリポップ！AIホームページ、Wix、Jimdoの無料利用・有料条件・編集方法を公式情報から比較。',home,active='index.html'),encoding='utf-8')
 
 compare=heading('COMPARE','AIホームページ作成ツール比較','最初から「おすすめ順位」を決めず、公式情報で確認できた条件を横並びに整理しました。')+'''
-<section class="wrap section"><p class="kicker">比較表</p><h2>無料でどこまで使える？</h2><div class="table-scroll"><table><caption class="aside">公式情報に基づく比較／2026年11月22日確認</caption><thead><tr><th>項目</th><th>ロリポップ！AIホームページ</th><th>Wix（Harmony）</th><th>Jimdo（AIビルダー）</th></tr></thead><tbody>
+<section class="wrap section"><p class="kicker">比較表</p><h2>無料でどこまで使える？</h2>
+<p class="muted">まずは次の3つの違いから確認。自分にとって外せない条件を決めると、選びやすくなります。</p>
+<div class="compare-highlights">
+ <div><span class="mini-number">01</span><h3>無料で公開を続けたい</h3><p>Wix・Jimdoには無料プランあり。広告表示や制限を確認。</p></div>
+ <div><span class="mini-number">02</span><h3>自分で細かく直したい</h3><p>WixはAIによる土台作りの後も、画面上で編集可能。</p></div>
+ <div><span class="mini-number">03</span><h3>会話で作りたい</h3><p>ロリポップは10日間試用可能。継続は有料なので支払総額を確認。</p></div>
+</div>
+<p class="scroll-hint">↔ 表は横にもスクロールできます（スマートフォン）</p><div class="table-scroll"><table><caption class="aside">公式情報に基づく比較／2026年11月22日確認</caption><thead><tr><th>項目</th><th>ロリポップ！AIホームページ</th><th>Wix（Harmony）</th><th>Jimdo（AIビルダー）</th></tr></thead><tbody>
 <tr><th scope="row">無料利用</th><td>10日間のお試し</td><td>無料プランあり</td><td>無料プランあり</td></tr>
 <tr><th scope="row">AIでの作り方</th><td>AIと会話して制作・修正</td><td>AIで作成後に画面上で編集</td><td>質問に回答して土台を作成</td></tr>
 <tr><th scope="row">独自ドメイン</th><td>長期契約向けの初年度特典あり（条件付き）</td><td>有料プランが必要</td><td>有料プランが必要</td></tr>
