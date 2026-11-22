@@ -333,3 +333,5 @@ th{background:#f5f8fa}
 .resource-links a>span:last-child{font-size:.76rem;font-weight:800;color:var(--accent-dark);margin-top:auto}
 @media(max-width:860px){.examples-list{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.examples-list,.resource-links{grid-template-columns:1fr}.examples-list article{padding:22px}.resource-roadmap{padding:18px}}
+
+.related-reading{border-top:1px solid var(--rule);margin:27px 0 13px;padding:17px 0}.related-reading>strong{font-size:.85rem;color:var(--ink)}.related-reading p{font-size:.85rem!important;margin:7px 0}.related-reading a{font-weight:750;color:var(--accent-dark)}
