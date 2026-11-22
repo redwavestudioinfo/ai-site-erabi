@@ -4,25 +4,62 @@ on:
     # Wednesday 07:31 Japan time (UTC Tuesday 22:31)
     - cron: '31 22 * * 2'
   workflow_dispatch:
+  # Initial self-test; does not publish articles or call a paid service.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weekly-draft.yml'
+      - 'scripts/ai_draft.py'
+      - 'data/editorial-topics.json'
 permissions:
   contents: read
+concurrency:
+  group: ai-editorial-draft
+  cancel-in-progress: false
 jobs:
   draft:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Create one unverified draft only (skip without free API key)
+      - name: Detect separately configured free API key
+        id: ai
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        shell: bash
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then
+            echo "has_key=true" >> "$GITHUB_OUTPUT"
+            echo "API key available. Only one draft request will be attempted."
+          else
+            echo "has_key=false" >> "$GITHUB_OUTPUT"
+            echo "No key configured. Zero API requests; no billing."
+          fi
+      - name: Create one unverified draft only
+        if: steps.ai.outputs.has_key == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
         run: python scripts/ai_draft.py
       - name: Store draft without publishing
+        if: steps.ai.outputs.has_key == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: draft-awaiting-fact-check
           path: drafts/*.md
           if-no-files-found: ignore
           retention-days: 14
+      - name: Summarize zero-cost status
+        env:
+          KEY_PRESENT: ${{ steps.ai.outputs.has_key }}
+        run: |
+          echo "### Weekly editorial draft" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$KEY_PRESENT" = "true" ]; then
+            echo "A single **unverified draft** was attempted. See the artifact if generated." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Skipped: `GEMINI_API_KEY` is not set. No external AI request was made." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "Drafts are **never auto-published** or merged into site pages." >> "$GITHUB_STEP_SUMMARY"
