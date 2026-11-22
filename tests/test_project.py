@@ -35,34 +35,40 @@ class ProjectTest(unittest.TestCase):
             self.assertEqual(page.count(approved_pixel),1)
             self.assertIn('PR・広告',page)
             self.assertIn('rel="nofollow"',page)
-    def test_v2_home_guided_navigation_and_seo(self):
+    def test_v3_home_editorial_navigation_and_seo(self):
         html=(ROOT/'site'/'index.html').read_text(encoding='utf-8')
-        for required in ('id="choose"','id="services"','id="quick-compare"','id="how-to"',
+        for required in ('id="comparison"','id="services"','id="chooser"','id="articles"',
                          'id="purpose"','id="budget"','id="picker-result"',
-                         'AIでホームページ。','PR・広告'):
+                         '「無料で作れる」','PR・広告'):
             with self.subTest(required=required):
                 self.assertIn(required,html)
         self.assertIn('google-site-verification',html)
         self.assertIn('gdwm3uodac9SUT8E0ySPk1PbU5tpjHOP52BWKDZ4WbQ',html)
         self.assertEqual(html.count('https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E'),1)
         self.assertNotIn('おすすめ第1位',html)
+        self.assertNotIn('QUICK FINDER',html)
+        self.assertNotIn('browser-preview',html)
 
-    def test_v2_comparison_and_local_assets(self):
+    def test_v3_comparison_and_local_assets(self):
         html=(ROOT/'site'/'compare.html').read_text(encoding='utf-8')
         self.assertIn('class="compare-highlights"',html)
-        self.assertIn('表は横にもスクロールできます',html)
         css=(ROOT/'site'/'assets'/'styles.css').read_text(encoding='utf-8')
         js=(ROOT/'site'/'assets'/'app.js').read_text(encoding='utf-8')
-        for token in ('.hero-v2','.service-grid','.picker-v2','.compare-highlights','@media'):
+        for token in ('.cover-layout','.feature-table','.service-story','.chooser-paper',
+                      '.compare-highlights','@media','--serif'):
             self.assertIn(token,css)
+        self.assertNotIn('hero-v2',css)
         self.assertIn('purpose.addEventListener',js)
         self.assertIn('budget.addEventListener',js)
 
-    def test_renderer_keeps_v2_and_tracking(self):
+    def test_renderer_keeps_v3_and_tracking(self):
         source=(ROOT/'scripts'/'render_pages.py').read_text(encoding='utf-8')
-        self.assertIn('class="hero hero-v2"',source)
-        self.assertIn('class="compare-highlights"',source)
-        self.assertIn('https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E',source)
+        html_source=(ROOT/'data'/'home-v3.html').read_text(encoding='utf-8')
+        self.assertIn("home-v3.html",source)
+        self.assertIn('class="cover"',html_source)
+        self.assertIn('class="compare-sheet"',html_source)
+        self.assertIn('https://px.a8.net/svt/ejp?a8mat=4BGR8X+DJM182+348+4SNX5E',html_source)
+        self.assertIn('PR・広告',html_source)
 
     def test_all_sources_are_https_and_unique(self):
         data=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
