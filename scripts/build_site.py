@@ -55,7 +55,10 @@ def main():
         locs=[url+p for p in urls]
         sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{escape(loc)}</loc></url>\n' for loc in locs)+'</urlset>\n'
         (DEST/'sitemap.xml').write_text(sitemap,encoding='utf-8')
-        (DEST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+url+'/sitemap.xml\n',encoding='utf-8')
+        # Simple alternate sitemap for troubleshooting XML processing in Search Console.
+        # URLs stay identical to canonical URLs in the XML sitemap.
+        (DEST/'sitemap.txt').write_text(''.join(loc+'\n' for loc in locs),encoding='utf-8')
+        (DEST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+url+'/sitemap.xml\nSitemap: '+url+'/sitemap.txt\n',encoding='utf-8')
     else:
         for p in DEST.rglob('*.html'):
             if p.name!='404.html':
