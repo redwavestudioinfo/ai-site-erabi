@@ -128,6 +128,13 @@ class ProjectTest(unittest.TestCase):
         self.assertIn('https://ai-site-erabi.pages.dev/compare</loc>',sitemap)
         self.assertIn('https://ai-site-erabi.pages.dev/articles/domain-renewal</loc>',sitemap)
         self.assertNotIn('.html</loc>',sitemap)
+        text_sitemap=(dist/'sitemap.txt').read_text(encoding='utf-8').splitlines()
+        self.assertEqual(len(text_sitemap),8)
+        self.assertEqual(set(text_sitemap),set(re.findall(r'<loc>(.*?)</loc>',sitemap)))
+        self.assertTrue(all(url.startswith('https://ai-site-erabi.pages.dev/') for url in text_sitemap))
+        robots=(dist/'robots.txt').read_text(encoding='utf-8')
+        self.assertIn('Sitemap: https://ai-site-erabi.pages.dev/sitemap.xml',robots)
+        self.assertIn('Sitemap: https://ai-site-erabi.pages.dev/sitemap.txt',robots)
 
     def test_all_sources_are_https_and_unique(self):
         data=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
